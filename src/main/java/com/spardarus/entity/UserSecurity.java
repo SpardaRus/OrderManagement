@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.Collection;
-import java.util.Collections;
 
 @Entity
 @Table(name = "t_users_security")
@@ -21,12 +20,11 @@ public class UserSecurity implements UserDetails {
     @Column(unique = true)
     @Email
     private String email;
-
     private String password;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new Role());
+        return null;
     }
 
     @Override
@@ -58,5 +56,4 @@ public class UserSecurity implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 }

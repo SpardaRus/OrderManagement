@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserSecurityRepository extends CrudRepository<UserSecurity, Integer> {
-
     UserSecurity findByEmail(String email);
 }
